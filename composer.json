@@ -1,0 +1,19 @@
+{
+	"keywords" : [
+		"sistema"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Vendor\\4f_proyect\\" : "src"
+		}
+	},
+	"name" : "vendor/",
+	"type" : "project",
+	"license" : "MIT",
+	"description" : "sistema aula virtual",
+	"require" : {
+		"php" : ">=7.3",
+		"lichtner/fluentpdo" : "~2.1",
+		"spipu/html2pdf" : "~5.2"
+	}
+}
