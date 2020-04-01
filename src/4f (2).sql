@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-04-2020 a las 11:00:35
+-- Tiempo de generación: 01-04-2020 a las 18:24:02
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -81,6 +81,13 @@ CREATE TABLE `publicacion` (
   `imagen` longblob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `publicacion`
+--
+
+INSERT INTO `publicacion` (`idpublicacion`, `titulo`, `descripcion`, `creado_en`, `termina_en`, `id_curso`, `idusuario`, `imagen`) VALUES
+(1, 'prueba', 'nueva', '2020-04-01', '2020-04-01', 1, 1, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -99,7 +106,8 @@ CREATE TABLE `rol` (
 
 INSERT INTO `rol` (`idrol`, `rol`, `idcurso`) VALUES
 (1, 'profesor', 1),
-(2, 'admin', 1);
+(2, 'admin', 1),
+(3, 'estudiante', 1);
 
 -- --------------------------------------------------------
 
@@ -122,7 +130,8 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`idusuario`, `usuario`, `clave`, `idpersona`, `idrol`, `email`) VALUES
 (1, 'Nelio', '1234', 1, 1, 'princesa_luce_10@hotmail.com'),
-(2, 'miguel', '1234', 1, 2, 'princesa_luce_11@hotmail.com');
+(2, 'miguel', '1234', 1, 2, 'princesa_luce_11@hotmail.com'),
+(3, 'prueba', '12345', 1, 3, 'princesa_luce_12@hotmail.com');
 
 --
 -- Índices para tablas volcadas
@@ -191,13 +200,13 @@ ALTER TABLE `publicacion`
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idrol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idusuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
