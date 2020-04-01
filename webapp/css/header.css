@@ -1,0 +1,48 @@
+ .avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	
+	top: -50px;
+	left: calc(50% - 50px);
+	
+}
+header {
+	background: #4e9a06;
+
+	overflow:hidden;
+	margin-bottom:20px;
+	
+}
+
+.header2{
+	
+	position: fixed;
+	height:100px
+}
+.header a{
+	color: white;
+	text-decoration: none;
+	padding: 2rem 0; 
+}
+.logo-nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.navigation ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.navigation ul li{
+	display: inline-block;
+}
+.navigation ul li a{
+	display: block;
+	padding: 0.5rem 1rem;
+	transition: all 0.4s linear;
+}
+.navigation ul li a:hover{
+	background: #a35c5f;
+}

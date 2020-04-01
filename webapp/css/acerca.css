@@ -1,0 +1,45 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+p{
+	font-family:'work Sans', sans-serif;
+	font-weight: lighter;
+}
+section.contenedor {
+	width:100%;
+	min-height: 400px;
+	overflow:hidden;
+	background-position: 0 50%;	
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	border-botton: 1px solid #D6D6D6;
+}
+
+section#cont1{
+	background-image: url(../Img/mision.jpg);
+}
+
+section#cont2{
+	background-image: url(../Img/vision.jpg);
+}
+
+section.texto{
+	float:right;
+	width: 50%;
+	min-height:400px;
+}
+p.titulo{
+	text-align: center;
+	margin-top:50px;
+	margin-bottom: 50px;
+	font-size:3em;
+	color: #000000;
+}
+p.texto{
+	margin:20px;
+	font-size:1.5em;
+	color:#818181;
+	line-height:35px;
+}
