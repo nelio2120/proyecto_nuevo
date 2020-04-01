@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-04-2020 a las 09:37:15
+-- Tiempo de generación: 01-04-2020 a las 11:00:35
 -- Versión del servidor: 10.1.38-MariaDB
 -- Versión de PHP: 5.6.40
 
@@ -77,7 +77,7 @@ CREATE TABLE `publicacion` (
   `creado_en` date NOT NULL,
   `termina_en` date NOT NULL,
   `id_curso` int(11) NOT NULL,
-  `id_persona` int(11) NOT NULL,
+  `idusuario` int(11) NOT NULL,
   `imagen` longblob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -146,7 +146,7 @@ ALTER TABLE `persona`
 ALTER TABLE `publicacion`
   ADD PRIMARY KEY (`idpublicacion`),
   ADD KEY `fk_id_curso_idx` (`id_curso`),
-  ADD KEY `fk_persona_idx` (`id_persona`);
+  ADD KEY `fk_usuario_idx` (`idusuario`);
 
 --
 -- Indices de la tabla `rol`
@@ -185,7 +185,7 @@ ALTER TABLE `persona`
 -- AUTO_INCREMENT de la tabla `publicacion`
 --
 ALTER TABLE `publicacion`
-  MODIFY `idpublicacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idpublicacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -208,7 +208,7 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `publicacion`
   ADD CONSTRAINT `fk_id_curso` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`idcurso`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_persona` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`idpersona`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_usuario` FOREIGN KEY (`idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `rol`
