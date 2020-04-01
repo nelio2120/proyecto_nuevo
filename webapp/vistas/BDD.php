@@ -101,6 +101,8 @@ class BDD
         $id = mysqli_insert_id($mysql);
         if ($res){
           return $id;
+            echo "insert $q \n";
+
         }else{
             echo "Erro en consulta: ".$mysql->errno ." \n";
             echo "Error: " . $mysql->error . "\n";
