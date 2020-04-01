@@ -17,8 +17,9 @@
               $rol = $consulta['rol'];
               if($rol == 'profesor'){
                   header('location: ../profesor/profesor_index.php');
-              }else{
-                  header('location: ../profesor/estudiante_index.php');
+              }
+              if($rol=='estudiante'){
+                  header('location: ../estudiante/estudiante_index.php');
               }
           }else{
               print "<script>alert('Contraseña incorrecta');</script>";

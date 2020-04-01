@@ -22,13 +22,15 @@ include("estudiante_index.php");
 <br><br>
 <!-- Contenedor Principal -->
 	<?php
-$query = "SELECT * FROM publicacion";
+$query = "SELECT titulo, descripcion, creado_en, concat(curso.nivel,' ',curso.paralelo)as id_curso,usuario as idusuario FROM publicacion 
+inner join curso on publicacion.id_curso = curso.idcurso
+inner join usuario on publicacion.idusuario = usuario.idusuario;";
 $result_publicacion = mysqli_query($conn, $query);
 
 while($row = mysqli_fetch_assoc($result_publicacion)) { ?>
           
 	<div class="comments-container">
-		<h3>Publicacion dirgido a:  <?php echo $row['general']; ?></h3>
+		<h3>Publicacion dirgido a:  <?php echo $row['id_curso']; ?></h3>
 
 		<ul id="comments-list" class="comments-list">
 			<li>
@@ -38,7 +40,7 @@ while($row = mysqli_fetch_assoc($result_publicacion)) { ?>
 					<!-- Contenedor del Comentario -->
 					<div class="comment-box">
 						<div class="comment-head">
-							<h6 class="comment-name by-author"><?php echo $row['usuario']; ?></h6>
+							<h6 class="comment-name by-author"><?php echo $row['idusuario']; ?></h6>
 							<span><?php echo $row['creado_en']; ?></span>
 							<i class="fa fa-reply"></i>
 							<i class="fa fa-heart"></i>
